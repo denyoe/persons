@@ -13,11 +13,16 @@ class PersonTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var emailLabel: UILabel!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.thumbnailImageView.layer.cornerRadius = self.thumbnailImageView.frame.size.height / 2
+        self.thumbnailImageView.clipsToBounds = true
+//        self.thumbnailImageView.layer.borderWidth = 3.0
+//        self.thumbnailImageView.layer.borderColor = UIColor.blue.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

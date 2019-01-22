@@ -18,8 +18,11 @@ class Person {
     
     var email: String
     
-    var image_sm: UIImage(named: "thumbnail")
-    var image_lg: UIImage(named: "picture")
+    var thumbnail: UIImage
+    var picture: UIImage
+    
+//    var image_sm: UIImage
+//    var image_lg: UIImage
     
     var street: String
     var city: String
@@ -32,8 +35,10 @@ class Person {
         self.fname = ""
         self.lname = ""
         self.gender = ""
-//        self.image_sm = <#UIImage?#>
-//        self.image_lg = <#UIImage?#>
+//        self.image_sm? = UIImage(named: "thumbnail")
+//        self.image_lg? = UIImage(named: "picture")
+        self.thumbnail = UIImage()
+        self.picture = UIImage()
         self.street = ""
         self.city = ""
         self.phone = ""

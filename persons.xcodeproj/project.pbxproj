@@ -30,6 +30,7 @@
 		539E9CA621F679E800F38533 /* PersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewController.swift; sourceTree = "<group>"; };
 		53EC960E21FBDD240004A61A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		53EC961021FBF8E20004A61A /* PersonDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewController.swift; sourceTree = "<group>"; };
+		53EC961221FC10930004A61A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +47,7 @@
 		539E9C8421F64C9A00F38533 = {
 			isa = PBXGroup;
 			children = (
+				53EC961221FC10930004A61A /* README.md */,
 				539E9C8F21F64C9A00F38533 /* persons */,
 				539E9C8E21F64C9A00F38533 /* Products */,
 			);

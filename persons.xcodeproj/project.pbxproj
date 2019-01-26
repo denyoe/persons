@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		539E9C9121F64C9A00F38533 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539E9C9021F64C9A00F38533 /* AppDelegate.swift */; };
-		539E9C9321F64C9A00F38533 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539E9C9221F64C9A00F38533 /* ViewController.swift */; };
 		539E9C9621F64C9A00F38533 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 539E9C9421F64C9A00F38533 /* Main.storyboard */; };
 		539E9C9821F64C9C00F38533 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 539E9C9721F64C9C00F38533 /* Assets.xcassets */; };
 		539E9C9B21F64C9C00F38533 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 539E9C9921F64C9C00F38533 /* LaunchScreen.storyboard */; };
 		539E9CA321F64F6200F38533 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539E9CA221F64F6200F38533 /* Person.swift */; };
 		539E9CA521F66AEB00F38533 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539E9CA421F66AEB00F38533 /* PersonTableViewCell.swift */; };
 		539E9CA721F679E800F38533 /* PersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539E9CA621F679E800F38533 /* PersonTableViewController.swift */; };
+		53EC960F21FBDD240004A61A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53EC960E21FBDD240004A61A /* Colors.xcassets */; };
+		53EC961121FBF8E20004A61A /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EC961021FBF8E20004A61A /* PersonDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		539E9C8D21F64C9A00F38533 /* persons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = persons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		539E9C9021F64C9A00F38533 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		539E9C9221F64C9A00F38533 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		539E9C9521F64C9A00F38533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		539E9C9721F64C9C00F38533 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		539E9C9A21F64C9C00F38533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -28,6 +28,8 @@
 		539E9CA221F64F6200F38533 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		539E9CA421F66AEB00F38533 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		539E9CA621F679E800F38533 /* PersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewController.swift; sourceTree = "<group>"; };
+		53EC960E21FBDD240004A61A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		53EC961021FBF8E20004A61A /* PersonDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +63,14 @@
 			isa = PBXGroup;
 			children = (
 				539E9C9021F64C9A00F38533 /* AppDelegate.swift */,
-				539E9C9221F64C9A00F38533 /* ViewController.swift */,
 				539E9CA221F64F6200F38533 /* Person.swift */,
 				539E9C9421F64C9A00F38533 /* Main.storyboard */,
 				539E9CA421F66AEB00F38533 /* PersonTableViewCell.swift */,
 				539E9CA621F679E800F38533 /* PersonTableViewController.swift */,
+				53EC961021FBF8E20004A61A /* PersonDetailsViewController.swift */,
 				539E9C9721F64C9C00F38533 /* Assets.xcassets */,
 				539E9C9921F64C9C00F38533 /* LaunchScreen.storyboard */,
+				53EC960E21FBDD240004A61A /* Colors.xcassets */,
 				539E9C9C21F64C9C00F38533 /* Info.plist */,
 			);
 			path = persons;
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				539E9C9B21F64C9C00F38533 /* LaunchScreen.storyboard in Resources */,
+				53EC960F21FBDD240004A61A /* Colors.xcassets in Resources */,
 				539E9C9821F64C9C00F38533 /* Assets.xcassets in Resources */,
 				539E9C9621F64C9A00F38533 /* Main.storyboard in Resources */,
 			);
@@ -146,7 +150,7 @@
 			files = (
 				539E9CA721F679E800F38533 /* PersonTableViewController.swift in Sources */,
 				539E9CA321F64F6200F38533 /* Person.swift in Sources */,
-				539E9C9321F64C9A00F38533 /* ViewController.swift in Sources */,
+				53EC961121FBF8E20004A61A /* PersonDetailsViewController.swift in Sources */,
 				539E9CA521F66AEB00F38533 /* PersonTableViewCell.swift in Sources */,
 				539E9C9121F64C9A00F38533 /* AppDelegate.swift in Sources */,
 			);
@@ -295,6 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L29TUW7HZB;
 				INFOPLIST_FILE = persons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -312,6 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L29TUW7HZB;
 				INFOPLIST_FILE = persons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

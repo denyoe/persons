@@ -12,6 +12,7 @@ class PersonTableViewController: UITableViewController {
     
     
     var persons = [Person]()
+    var currentPerson: Person?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +77,10 @@ class PersonTableViewController: UITableViewController {
                     newPerson.phone = contact["phone"] as? String ?? ""
                     
                     if let picture = contact["picture"] as? [String: Any] {
-                        let thumbnail_url: URL = URL(string: picture["thumbnail"] as! String)!
+                        newPerson.thumb_url = picture["thumbnail"] as! String
+                        newPerson.pic_url = picture["large"] as! String
+                        
+                        let thumbnail_url: URL = URL(string: newPerson.thumb_url)!
                         
                         let imageData:NSData = NSData(contentsOf: thumbnail_url)!
                         
@@ -123,19 +127,36 @@ class PersonTableViewController: UITableViewController {
         cell.nameLabel.text = person.name
         cell.emailLabel.text = person.email
         cell.thumbnailImageView.image = person.thumbnail
-//        cell.thumbnailImageView.image = person.image_sm
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let alpha: Double
+        if( indexPath.row % 2 != 0 ) {
+            alpha = 0.1
+        } else {
+            alpha = 0.4
+        }
+        
+        cell.backgroundColor = UIColor(red: 178/255, green: 155/255, blue: 127/255 , alpha:CGFloat(alpha))
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentPerson = persons[indexPath.row]
+        
+        performSegue(withIdentifier: "detail_segue", sender: self)
+    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier=="detail_segue"{
+            let detailViewController=segue.destination as? PersonDetailsViewController
+            detailViewController?.person=currentPerson
+        }
     }
-    */
 
 }

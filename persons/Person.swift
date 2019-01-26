@@ -19,10 +19,9 @@ class Person {
     var email: String
     
     var thumbnail: UIImage
+    var thumb_url: String
     var picture: UIImage
-    
-//    var image_sm: UIImage
-//    var image_lg: UIImage
+    var pic_url: String
     
     var street: String
     var city: String
@@ -35,10 +34,10 @@ class Person {
         self.fname = ""
         self.lname = ""
         self.gender = ""
-//        self.image_sm? = UIImage(named: "thumbnail")
-//        self.image_lg? = UIImage(named: "picture")
         self.thumbnail = UIImage()
+        self.thumb_url = ""
         self.picture = UIImage()
+        self.pic_url = ""
         self.street = ""
         self.city = ""
         self.phone = ""
@@ -46,10 +45,10 @@ class Person {
     }
     
     var name: String {
-        return self.fname + " " + self.lname
+        return (self.fname + " " + self.lname).uppercased()
     }
     
     var full_name: String {
-        return self.title + ". " + self.fname + " " + self.lname
+        return self.title + ". " + (self.fname + " " + self.lname).uppercased()
     }
 }

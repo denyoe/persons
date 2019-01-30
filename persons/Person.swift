@@ -9,6 +9,16 @@
 import Foundation
 import UIKit
 
+extension String {
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).uppercased() + self.lowercased().dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+}
+
 class Person {
     var title: String
     var fname: String
@@ -49,6 +59,18 @@ class Person {
     }
     
     var full_name: String {
-        return self.title + ". " + (self.fname + " " + self.lname).uppercased()
+        return self.title.capitalizingFirstLetter() + ". " + self.fname.capitalizingFirstLetter() + " " + self.lname.capitalizingFirstLetter()
+    }
+    
+    var address: String {
+        return self.street.capitalizingFirstLetter() + ", " + self.city.capitalizingFirstLetter() + "."
+    }
+    
+    var tel: String {
+        return "Tel: " + self.phone + " | Cell: " + self.cell
+    }
+    
+    var cell_no: String {
+        return "Cel: " + self.cell
     }
 }

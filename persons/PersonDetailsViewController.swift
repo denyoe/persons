@@ -11,7 +11,10 @@ import UIKit
 class PersonDetailsViewController: UIViewController {
     
     @IBOutlet weak var picture: UIImageView!
-    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var telLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     
     var person: Person?
 
@@ -27,19 +30,13 @@ class PersonDetailsViewController: UIViewController {
             let imageData:NSData = NSData(contentsOf: pic_url)!
             
             person.picture = UIImage(data: imageData as Data)!
+            
             picture.image = person.picture
+            nameLabel.text = person.full_name
+            telLabel.text = person.tel
+            emailLabel.text = person.email
+            addressLabel.text = person.address
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

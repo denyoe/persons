@@ -14,6 +14,8 @@
 		539E9CA321F64F6200F38533 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539E9CA221F64F6200F38533 /* Person.swift */; };
 		539E9CA521F66AEB00F38533 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539E9CA421F66AEB00F38533 /* PersonTableViewCell.swift */; };
 		539E9CA721F679E800F38533 /* PersonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539E9CA621F679E800F38533 /* PersonTableViewController.swift */; };
+		53E152F82201171200A23CC0 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E152F72201171200A23CC0 /* Reachability.swift */; };
+		53E152FA2201586000A23CC0 /* ResultsDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E152F92201586000A23CC0 /* ResultsDisplayController.swift */; };
 		53EC960F21FBDD240004A61A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53EC960E21FBDD240004A61A /* Colors.xcassets */; };
 		53EC961121FBF8E20004A61A /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EC961021FBF8E20004A61A /* PersonDetailsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +30,8 @@
 		539E9CA221F64F6200F38533 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		539E9CA421F66AEB00F38533 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		539E9CA621F679E800F38533 /* PersonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewController.swift; sourceTree = "<group>"; };
+		53E152F72201171200A23CC0 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		53E152F92201586000A23CC0 /* ResultsDisplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsDisplayController.swift; sourceTree = "<group>"; };
 		53EC960E21FBDD240004A61A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		53EC961021FBF8E20004A61A /* PersonDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewController.swift; sourceTree = "<group>"; };
 		53EC961221FC10930004A61A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -67,7 +71,9 @@
 				539E9C9021F64C9A00F38533 /* AppDelegate.swift */,
 				539E9CA221F64F6200F38533 /* Person.swift */,
 				539E9C9421F64C9A00F38533 /* Main.storyboard */,
+				53E152F92201586000A23CC0 /* ResultsDisplayController.swift */,
 				539E9CA421F66AEB00F38533 /* PersonTableViewCell.swift */,
+				53E152F72201171200A23CC0 /* Reachability.swift */,
 				539E9CA621F679E800F38533 /* PersonTableViewController.swift */,
 				53EC961021FBF8E20004A61A /* PersonDetailsViewController.swift */,
 				539E9C9721F64C9C00F38533 /* Assets.xcassets */,
@@ -150,10 +156,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53E152F82201171200A23CC0 /* Reachability.swift in Sources */,
 				539E9CA721F679E800F38533 /* PersonTableViewController.swift in Sources */,
 				539E9CA321F64F6200F38533 /* Person.swift in Sources */,
 				53EC961121FBF8E20004A61A /* PersonDetailsViewController.swift in Sources */,
 				539E9CA521F66AEB00F38533 /* PersonTableViewCell.swift in Sources */,
+				53E152FA2201586000A23CC0 /* ResultsDisplayController.swift in Sources */,
 				539E9C9121F64C9A00F38533 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

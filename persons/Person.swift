@@ -73,4 +73,8 @@ class Person {
     var cell_no: String {
         return "Cel: " + self.cell
     }
+    
+    var searchable: String {
+        return self.fname + " " + self.lname + " " + self.email
+    }
 }

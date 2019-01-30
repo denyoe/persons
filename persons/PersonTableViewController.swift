@@ -21,13 +21,8 @@ class PersonTableViewController: UITableViewController {
         
         self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl?.addTarget(self, action: #selector(refreshHandler(sender:)), for: UIControl.Event.valueChanged)
-        
-        // tableView.register(PersonTableViewCell.self, forCellReuseIdentifier: "PersonTableViewCell")
+
         start()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     @objc func refreshHandler(sender: UIRefreshControl) {
@@ -72,16 +67,12 @@ extension PersonTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if searching {
-            return 40
-        } else {
-            return tableView.rowHeight
-        }
+        return -1.0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "PersonTableViewCell") as? PersonTableViewCell else {
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "PersonTableViewCell", for: indexPath) as? PersonTableViewCell else {
             fatalError("The dequeued cell is not an instance of PersonTableViewCell.")
         }
         
@@ -220,15 +211,13 @@ extension PersonTableViewController {
     }
     
     private func filterContentForSearchText(searchText: String) {
-        // Filter the array using the filter method
         if self.persons.count == 0 {
             self.searchResults = []
             return
         }
         
         self.searchResults = self.persons.filter({( aPerson: Person) -> Bool in
-            // to start, let's just search by name
-            return aPerson.name.lowercased().contains(searchText.lowercased())
+            return aPerson.searchable.lowercased().contains(searchText.lowercased())
         })
     }
     
@@ -236,6 +225,9 @@ extension PersonTableViewController {
         let alert = UIAlertController(title: title, message: body, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Retry", comment: "Reload"), style: .default, handler: { _ in
             self.start()
+            if self.refreshControl?.isRefreshing == true {
+                self.refreshControl?.endRefreshing()
+            }
         }))
         alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel & Quit"), style: .cancel, handler: { _ in
             UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
@@ -249,8 +241,22 @@ extension PersonTableViewController {
 
 extension PersonTableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.filterContentForSearchText(searchText: searchText)
-        searching = true
+        if searchText.count >= 3 {
+            self.filterContentForSearchText(searchText: searchText)
+            searching = true
+        } else {
+            searchResults = persons
+        }
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searching = false
+        searchResults.removeAll()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        searchResults.removeAll()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

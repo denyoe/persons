@@ -1,4 +1,4 @@
-###  IOS Application
+###  iOS Application
 
 
 #### Objective
@@ -14,4 +14,3 @@ Use the REST API service at [https://randomuser.me/documentation#howto](https://
 Display those contacts in a custom table view cell.
 
 Display additional information for each contact in a detail view screen.
-
